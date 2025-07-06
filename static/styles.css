@@ -1,0 +1,192 @@
+/* Simple, clean styling for the GCS static website demo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    text-align: center;
+    padding: 60px 0 40px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #495057;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.feature h3 {
+    color: #495057;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.feature p {
+    color: #6c757d;
+}
+
+.info,
+.testing,
+.downgrade {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+}
+
+.info h2,
+.testing h2,
+.downgrade h2 {
+    color: #495057;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.info h3 {
+    color: #495057;
+    margin: 30px 0 15px 0;
+    font-size: 1.4rem;
+}
+
+#deployment-info,
+#testing-info,
+.downgrade-info {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #667eea;
+}
+
+#deployment-info p,
+#testing-info p,
+.downgrade-info p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+#deployment-info p:last-child,
+#testing-info p:last-child,
+.downgrade-info p:last-child {
+    margin-bottom: 0;
+}
+
+#deployment-info strong,
+#testing-info strong,
+.downgrade-info strong {
+    color: #495057;
+    font-weight: 600;
+}
+
+#current-url {
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.info ul,
+.downgrade-info ul {
+    list-style: none;
+    margin: 15px 0;
+}
+
+.info li,
+.downgrade-info li {
+    padding: 8px 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.info li:last-child,
+.downgrade-info li:last-child {
+    border-bottom: none;
+}
+
+.downgrade-info code {
+    background: #e9ecef;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: #6c757d;
+    border-top: 1px solid #dee2e6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .info,
+    .testing,
+    .downgrade {
+        padding: 30px 20px;
+    }
+}

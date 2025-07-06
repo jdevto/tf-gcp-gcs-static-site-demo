@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCS Static Website Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 GCS Static Website Demo</h1>
+            <p>Successfully deployed with Terraform</p>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h2>Static Website Hosting on Google Cloud Storage</h2>
+                <p>This website demonstrates flexible static hosting with Terraform infrastructure as code.</p>
+
+                <div class="features">
+                    <div class="feature">
+                        <h3>✅ Infrastructure as Code</h3>
+                        <p>Deployed entirely with Terraform</p>
+                    </div>
+                    <div class="feature">
+                        <h3>🌐 Professional Setup</h3>
+                        <p>Load Balancer with Global CDN for optimal performance</p>
+                    </div>
+                    <div class="feature">
+                        <h3>⚡ Proper Website Behavior</h3>
+                        <p>Root URL serves index.html, custom 404 pages</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info">
+                <h2>Current Deployment: Load Balancer</h2>
+                <div id="deployment-info">
+                    <p><strong>Setup Type:</strong> Load Balancer (Professional)</p>
+                    <p><strong>Cost Impact:</strong> 💰 Additional cost for Load Balancer and CDN (~$18-25/month)</p>
+                    <p><strong>Website Behavior:</strong> ✅ Serves index.html automatically for root URL, ✅ Custom 404
+                        pages, ✅ Global CDN</p>
+                    <p><strong>Resources:</strong> 12 Terraform resources</p>
+                    <p><strong>Static IP:</strong> 34.160.224.105</p>
+                </div>
+
+                <h3>Architecture Components</h3>
+                <ul>
+                    <li><strong>Google Cloud Storage:</strong> Hosts static files with website configuration</li>
+                    <li><strong>Load Balancer:</strong> Provides proper website routing and CDN</li>
+                    <li><strong>Global CDN:</strong> Caches content worldwide for better performance</li>
+                    <li><strong>Static IP:</strong> Consistent access point for your website</li>
+                    <li><strong>Terraform:</strong> Infrastructure as Code deployment</li>
+                </ul>
+            </section>
+
+            <section class="testing">
+                <h2>Testing Your Setup</h2>
+                <div id="testing-info">
+                    <p><strong>Current URL:</strong> <span id="current-url"></span></p>
+                    <p><strong>Load Balancer URL:</strong> <a href="http://34.160.224.105/"
+                            target="_blank">http://34.160.224.105/</a></p>
+                    <p><strong>Direct GCS Access:</strong>
+                        <a href="https://storage.googleapis.com/static-website-demo-2025/index.html"
+                            target="_blank">index.html</a> |
+                        <a href="https://storage.googleapis.com/static-website-demo-2025/404.html"
+                            target="_blank">404.html</a>
+                    </p>
+                    <p><strong>Test Root URL:</strong>
+                        <a href="http://34.160.224.105/" target="_blank">Try root URL</a>
+                        (should serve this page automatically)
+                    </p>
+                    <p><strong>Test 404 Page:</strong>
+                        <a href="http://34.160.224.105/nonexistent.html" target="_blank">Try missing page</a>
+                        (should serve custom 404.html)
+                    </p>
+                </div>
+            </section>
+
+            <section class="downgrade">
+                <h2>Want to Save Costs?</h2>
+                <p>Switch to Direct GCS for free tier hosting:</p>
+                <div class="downgrade-info">
+                    <p><strong>Benefits:</strong></p>
+                    <ul>
+                        <li>💚 Stays in Google Cloud free tier</li>
+                        <li>💚 ~$0.026/month vs $18-25/month</li>
+                        <li>💚 Simple 5-resource setup</li>
+                    </ul>
+                    <p><strong>Trade-offs:</strong></p>
+                    <ul>
+                        <li>❌ Root URL returns XML bucket listing</li>
+                        <li>❌ Missing pages return XML errors</li>
+                        <li>❌ No CDN acceleration</li>
+                        <li>❌ No static IP</li>
+                    </ul>
+                    <p><strong>To Switch:</strong> Set <code>enable_load_balancer = false</code> in terraform.tfvars</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 GCS Static Website Demo - Deployed with Terraform</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple script to show current URL
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('current-url').textContent = window.location.href;
+        });
+    </script>
+</body>
+
+</html>
